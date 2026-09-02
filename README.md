@@ -47,7 +47,7 @@ jobs:
 
 Until you do step 3, the Action still posts a green check or red X on the PR, but GitHub will allow merge.
 
-Use `@v1` in the YAML above (moving major). Pin `@v1.0.1` (or a later full tag) if you want the version frozen.
+Leave `@v1` as in the example so you get the latest 1.x. Use a full tag such as `@v1.0.2` only if you need that exact version frozen.
 
 ## Heading rule
 
