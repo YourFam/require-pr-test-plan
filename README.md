@@ -53,7 +53,7 @@ GitHub **will not** list a check under Settings until that check has run on **th
 
 Intended result: the check **Require test plan** fails with a red X. That failure is what you want. It registers the name **Require test plan** in GitHub’s check list.
 
-On the PR you should see something like `Require test plan / Require test plan` (workflow name / job name). If you only see `test-plan`, the `name: Require test plan` line is missing from the YAML on that branch — fix the file on `main` and open a new PR.
+The PR check should be named **Require test plan**.
 
 You can close this dummy PR without merging. The run still counts.
 
