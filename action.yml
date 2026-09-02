@@ -2,7 +2,7 @@ name: 'Require PR Test Plan'
 description: 'Fail the check if the pull request body has no Test plan heading.'
 author: 'YourFam'
 branding:
-  icon: 'checklist'
+  icon: check-square'
   color: 'green'
 runs:
   using: 'node20'
