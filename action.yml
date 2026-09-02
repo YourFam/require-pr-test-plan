@@ -1,0 +1,9 @@
+name: 'Require PR Test Plan'
+description: 'Fail the check if the pull request body has no Test plan heading.'
+author: 'YourFam'
+branding:
+  icon: 'checklist'
+  color: 'green'
+runs:
+  using: 'node20'
+  main: 'index.js'

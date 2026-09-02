@@ -1,0 +1,14 @@
+{
+  "name": "require-pr-test-plan",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Fail the GitHub check unless the pull request body has a Test plan heading.",
+  "main": "index.js",
+  "scripts": {
+    "test": "node --test"
+  },
+  "license": "MIT",
+  "engines": {
+    "node": ">=20"
+  }
+}
