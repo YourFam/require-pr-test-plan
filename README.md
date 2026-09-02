@@ -28,8 +28,6 @@ jobs:
 
 3. Make the check required so a red X actually blocks merge (repo admin):
 
-   **Rulesets (current GitHub UI)**
-
    1. Repo **Settings** → **Rules** → **Rulesets**.
    2. **New ruleset** → **New branch ruleset**.
    3. Enforcement: **Active**. Target: your default branch (`main`).
@@ -37,13 +35,7 @@ jobs:
    5. **Add checks**, search for **Require test plan**, and **select it from the list**. Do not type a name that is not listed. That list is the job `name` in the YAML (`Require test plan`). It appears only after step 2.
    6. Save the ruleset.
 
-   **Classic branch protection**
-
-   1. Repo **Settings** → **Branches** → **Add classic branch protection rule**.
-   2. Branch name pattern: `main`.
-   3. Enable **Require status checks to pass before merging**.
-   4. Search for **Require test plan**, and **select it from the list**. Do not type a name that is not listed.
-   5. Save.
+   Do not also add a classic branch protection rule for this. If GitHub says an existing `main` protection rule is fully covered by the ruleset, you can delete that classic rule.
 
 Until you do step 3, the Action still posts a green check or red X on the PR, but GitHub will allow merge.
 
