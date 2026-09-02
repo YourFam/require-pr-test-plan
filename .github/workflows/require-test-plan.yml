@@ -7,6 +7,7 @@ permissions:
   checks: write
 jobs:
   test-plan:
+    name: Require test plan
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4

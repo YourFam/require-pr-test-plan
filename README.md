@@ -6,7 +6,7 @@ This is a JavaScript GitHub Action. It reads the PR body from the workflow event
 
 ## Use it in 30 seconds
 
-Add `.github/workflows/require-test-plan.yml`:
+1. Add `.github/workflows/require-test-plan.yml` on your default branch (`main`):
 
 ```yaml
 name: Require test plan
@@ -18,14 +18,36 @@ permissions:
   checks: write
 jobs:
   test-plan:
+    name: Require test plan
     runs-on: ubuntu-latest
     steps:
       - uses: YourFam/require-pr-test-plan@v1
 ```
 
-Then make the workflow a required status check if you want it to block merge.
+2. Open any pull request so the check runs once. GitHub will not list a check in Settings until it has run.
 
-Pin `@v1` for the moving major tag, or a full tag such as `@v1.0.0`. Until you have published a release of *this* repo, the listing repository dogfoods with `uses: ./` after `actions/checkout`.
+3. Make the check required so a red X actually blocks merge (repo admin):
+
+   **Rulesets (current GitHub UI)**
+
+   1. Repo **Settings** → **Rules** → **Rulesets**.
+   2. **New ruleset** → **New branch ruleset**.
+   3. Enforcement: **Active**. Target: your default branch (`main`).
+   4. Enable **Require status checks to pass**.
+   5. **Add checks**, search for **Require test plan**, select it.
+   6. Save the ruleset.
+
+   **Classic branch protection**
+
+   1. Repo **Settings** → **Branches** → **Add classic branch protection rule**.
+   2. Branch name pattern: `main`.
+   3. Enable **Require status checks to pass before merging**.
+   4. Search for **Require test plan**, select it.
+   5. Save.
+
+Until you do step 3, the Action still posts a green check or red X on the PR, but GitHub will allow merge.
+
+Use `@v1` in the YAML above (moving major). Pin `@v1.0.1` (or a later full tag) if you want the version frozen.
 
 ## Heading rule
 
